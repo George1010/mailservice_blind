@@ -45,11 +45,10 @@ time.sleep(2)
 r = sr.Recognizer()
 with sr.Microphone() as source:
     print ("Your choice:")
-    #r.adjust_for_ambient_noise(source)
-    #audio=r.listen(source)
+    r.adjust_for_ambient_noise(source)
+    audio=r.listen(source)
     print ("ok done!!")
-    #text=r.recognize_google(audio)
-    text="two"
+    text=r.recognize_google(audio)
     try:
         print ("You said : "+text)
     except:
@@ -63,7 +62,6 @@ if text == '1' or text == 'One' or text == 'one':
         audio=r.listen(source,)
         print ("ok done!!")
         text1=r.recognize_google(audio)
-        #text1="This is my mail "
         print ("You said : "+text1)
         msg = text1
     msg = MIMEMultipart()
